@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>project-throwha — Free AI Throws Coaching for Every Athlete</title>
-  <meta name="description" content="A free AI throws coach for shot put, discus, javelin and hammer. For every athlete — rural, para, self-coached, beginner, competitive. By Lee O'Halloran, Australian & Oceania Record Holder.">
+  <title>project-throwha - Free AI Throws Coaching for Every Athlete</title>
+  <meta name="description" content="A free AI throws coach for shot put, discus, javelin and hammer. For every athlete - rural, para, self-coached, beginner, competitive. By Lee O'Halloran, Australian & Oceania Record Holder.">
   <style>
     :root {
       --navy: #1B2A4A;
@@ -72,6 +72,55 @@
     }
 
     .nav-cta:hover { background: var(--copper-light); color: white !important; }
+
+    /* ── MOBILE NAV ── */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    .nav-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--navy-dark);
+      z-index: 150;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .nav-overlay.active {
+      display: flex;
+    }
+
+    .nav-overlay a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .nav-overlay .nav-cta {
+      background: var(--copper);
+      padding: 14px 28px;
+      border-radius: 8px;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -565,14 +614,97 @@
       opacity: 0.7;
     }
 
+    /* ── HOSTED PLATFORM ── */
+    .hosted-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hosted-inner p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      font-size: 0.97rem;
+      margin-bottom: 12px;
+    }
+
+    .hosted-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 3px solid var(--copper);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+    }
+
+    .hosted-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .hosted-card-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── SPONSOR ── */
+    .sponsor-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .sponsor-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+
+    .sponsor-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .sponsor-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links { display: none !important; }
       nav { padding: 12px 16px; }
-      .nav-links { display: none; }
       .hero { padding: 60px 20px 50px; }
-      .hero-stats { gap: 24px; }
-      .features, .how, .who, .about, .free-section { padding: 60px 20px; }
-      .events { padding: 60px 20px; }
+      .hero-stats { gap: 20px; flex-direction: column; align-items: center; }
+      .hero-stat { border-left: none; border-bottom: 2px solid var(--copper); padding: 0 0 12px 0; text-align: center; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; max-width: 320px; text-align: center; }
+      .features, .how, .who, .free-section { padding: 48px 16px; }
+      .events { padding: 48px 16px; }
+      .about { padding: 48px 16px; }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .event-pills { justify-content: center; }
+      .hosted-inner { grid-template-columns: 1fr; gap: 32px; }
+      .sponsor-inner { grid-template-columns: 1fr; gap: 32px; }
+      .mission h2 { font-size: 1.4rem; }
+      .section-title { font-size: 1.4rem; }
+      .free-section h2 { font-size: 1.6rem; }
+      .hero-promise { font-size: 11px !important; }
     }
   </style>
 </head>
@@ -590,14 +722,26 @@
     <li><a href="#about">About</a></li>
     <li><a href="#download" class="nav-cta">Download Free</a></li>
   </ul>
+  <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('active')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav-overlay" id="mobileNav">
+  <a href="#features" onclick="document.getElementById('mobileNav').classList.remove('active')">Features</a>
+  <a href="#events" onclick="document.getElementById('mobileNav').classList.remove('active')">Events</a>
+  <a href="#how" onclick="document.getElementById('mobileNav').classList.remove('active')">Get Started</a>
+  <a href="#about" onclick="document.getElementById('mobileNav').classList.remove('active')">About</a>
+  <a href="#download" class="nav-cta" onclick="document.getElementById('mobileNav').classList.remove('active')">Download Free</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">Free · Open Source · No Subscriptions</div>
   <h1>Expert throws coaching for <span>every athlete</span></h1>
   <p class="hero-sub">
-    Shot put, discus, javelin, and hammer — session coaching, technique diagnosis,
+    Shot put, discus, javelin, and hammer - session coaching, technique diagnosis,
     pre-competition briefs, and more. Available to every athlete, anywhere, for free.
   </p>
   <div class="hero-promise" style="display:inline-block; background: rgba(192,123,62,0.15); border: 1.5px solid rgba(192,123,62,0.4); border-radius: 6px; padding: 8px 20px; margin-bottom: 32px; font-size: 13px; font-weight: 600; color: var(--copper-light); letter-spacing: 0.5px;">
@@ -613,7 +757,7 @@
       <div class="hero-stat-label">Shot · Disc · Jav · Hammer</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-value">F40–F57</div>
+      <div class="hero-stat-value">F40-F57</div>
       <div class="hero-stat-label">All para classifications</div>
     </div>
     <div class="hero-stat">
@@ -629,7 +773,7 @@
     <h2>Good coaching shouldn't be a privilege</h2>
     <p>
       Whether you're in rural Queensland with no local club, a para athlete with no classification-specific coach,
-      a self-coached competitor looking for an edge, or a beginner who just picked up a shot put for the first time —
+      a self-coached competitor looking for an edge, or a beginner who just picked up a shot put for the first time -
       quality throws coaching should be available to you.
       <br><br>
       <strong>project-throwha</strong> makes that possible. Free, forever.
@@ -641,18 +785,18 @@
 <section class="features" id="features">
   <div class="section-label">What it does</div>
   <h2 class="section-title">Your coach. At the track. At 6am.</h2>
-  <p class="section-sub">Everything a good throws coach does — available on your phone, whenever you need it.</p>
+  <p class="section-sub">Everything a good throws coach does - available on your phone, whenever you need it.</p>
 
   <div class="feature-grid">
     <div class="feature-card">
       <div class="feature-icon">🎙️</div>
       <h3>Session Coaching</h3>
-      <p>Log a voice note or text after training. The coach analyses what happened, reinforces what worked, and flags 1–2 things to fix. Your cue bank builds over time.</p>
+      <p>Log a voice note or text after training. The coach analyses what happened, reinforces what worked, and flags 1-2 things to fix. Your cue bank builds over time.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🔍</div>
       <h3>Technique Diagnosis</h3>
-      <p>Describe what you feel in the throw and get a specific diagnosis — not generic advice. The coach traces faults back to their root cause and gives you one thing to fix.</p>
+      <p>Describe what you feel in the throw and get a specific diagnosis - not generic advice. The coach traces faults back to their root cause and gives you one thing to fix.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">📋</div>
@@ -667,17 +811,17 @@
     <div class="feature-card">
       <div class="feature-icon">⚡</div>
       <h3>Competition Warm-Up</h3>
-      <p>A 12–15 minute warm-up built around your event and cues. No equipment needed. Four phases: raise temp, mobility, CNS activation, event-specific priming.</p>
+      <p>A 12-15 minute warm-up built around your event and cues. No equipment needed. Four phases: raise temp, mobility, CNS activation, event-specific priming.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">📈</div>
       <h3>Gets Smarter Over Time</h3>
-      <p>The more sessions you log, the better it knows you. A cue bank personalised to your body, your faults, and what actually works for you — not a generic athlete.</p>
+      <p>The more sessions you log, the better it knows you. A cue bank personalised to your body, your faults, and what actually works for you - not a generic athlete.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">💪</div>
       <h3>Strength & Conditioning</h3>
-      <p>Throws-specific S&C programming — mobility, power development, injury prevention, and recovery protocols built around the demands of rotational throwing sports.</p>
+      <p>Throws-specific S&C programming - mobility, power development, injury prevention, and recovery protocols built around the demands of rotational throwing sports.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">🧱</div>
@@ -708,8 +852,8 @@
     <div class="para-note">
       <p>
         <strong>Full para athlete support.</strong>
-        All F40–F57 classifications covered — ambulant and seated. Seated throws
-        (F51–F57) have their own dedicated reference with frame setup, trunk mechanics,
+        All F40-F57 classifications covered - ambulant and seated. Seated throws
+        (F51-F57) have their own dedicated reference with frame setup, trunk mechanics,
         and non-throwing arm coaching. Built by an F46 athlete who knows exactly
         what classification-specific coaching looks like.
       </p>
@@ -728,7 +872,7 @@
       <div class="step-num">1</div>
       <div class="step-content">
         <h3>Install OpenClaw</h3>
-        <p>Download OpenClaw — the free AI agent platform that powers project-throwha.
+        <p>Download OpenClaw - the free AI agent platform that powers project-throwha.
         Available for Mac, Windows, and Linux.
         <a href="https://openclaw.ai" style="color: var(--copper);">openclaw.ai →</a></p>
       </div>
@@ -774,11 +918,11 @@
     <div class="who-grid">
       <div class="who-card">
         <h3>Competitive athletes</h3>
-        <p>Session-by-session analysis, technique diagnosis, personalised pre-comp briefs. The edge you get from a dedicated throws coach — without needing one on deck.</p>
+        <p>Session-by-session analysis, technique diagnosis, personalised pre-comp briefs. The edge you get from a dedicated throws coach - without needing one on deck.</p>
       </div>
       <div class="who-card">
         <h3>Rural & remote athletes</h3>
-        <p>No local club, no local coach, no problem. Full coaching support wherever you train — town oval, backyard, school grounds.</p>
+        <p>No local club, no local coach, no problem. Full coaching support wherever you train - town oval, backyard, school grounds.</p>
       </div>
       <div class="who-card">
         <h3>Para athletes</h3>
@@ -786,7 +930,7 @@
       </div>
       <div class="who-card">
         <h3>Beginners</h3>
-        <p>Never picked up a shot put? The coach starts from zero — grip, stance, one concept at a time. No overwhelm, no jargon.</p>
+        <p>Never picked up a shot put? The coach starts from zero - grip, stance, one concept at a time. No overwhelm, no jargon.</p>
       </div>
       <div class="who-card">
         <h3>Coaches</h3>
@@ -807,7 +951,7 @@
       <div class="section-label" style="color: var(--copper-light);">Who built this</div>
       <h2>Made by a thrower, for throwers</h2>
       <p>
-        Project Throwha was built by Lee O'Halloran — Australian & Oceania Record Holder
+        Project Throwha was built by Lee O'Halloran - Australian & Oceania Record Holder
         in F46 Shot Put, training at the Australian Institute of Sport under
         Paralympian coach Hamish MacDonald.
       </p>
@@ -818,8 +962,8 @@
       </p>
       <p>
         The technical knowledge he's built, been taught, has and hasn't had access to is the
-        foundation of this skill. Project Throwha is built for every throws athlete —
-        able-bodied and para — from first session to competitive level.
+        foundation of this skill. Project Throwha is built for every throws athlete -
+        able-bodied and para - from first session to competitive level.
       </p>
       <div style="margin-top: 20px;">
         <a href="https://instagram.com/throwha_" target="_blank" style="color: var(--copper-light); text-decoration: none; font-weight: 600; font-size: 14px;">
@@ -838,7 +982,7 @@
       </div>
       <div class="about-stat">
         <div class="about-stat-value">LA 2028</div>
-        <div class="about-stat-label">Paralympic Record &amp; Gold Medal — The Target</div>
+        <div class="about-stat-label">Paralympic Record &amp; Gold Medal - The Target</div>
       </div>
       <div class="about-stat">
         <div class="about-stat-value">AIS</div>
@@ -850,40 +994,40 @@
 
 <!-- HOSTED PLATFORM -->
 <section style="background: var(--navy); padding: 80px 32px; color: white;">
-  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+  <div class="hosted-inner">
     <div>
       <div class="section-label" style="color: var(--copper-light);">Coming Soon</div>
-      <h2 style="font-size: 1.8rem; font-weight: 900; color: white; margin-bottom: 16px;">Your own dedicated AI coach — no setup required</h2>
-      <p style="color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 12px;">
+      <h2 class="section-title" style="color: white;">Your own dedicated AI coach — no setup required</h2>
+      <p>
         Installing OpenClaw is easy — but not every athlete has the capacity or the tech setup to do it.
         We're building a hosted platform so any athlete can register online and immediately get their own
         dedicated AI coach, no installation needed.
       </p>
-      <p style="color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 12px;">
+      <p>
         Log sessions via a web browser or your phone. Get coaching feedback, pre-comp briefs,
         and warm-ups — all without touching a command line.
       </p>
-      <p style="color: rgba(255,255,255,0.72); line-height: 1.8;">
+      <p>
         <strong style="color: var(--copper-light);">Free for athletes. Always.</strong>
         The cost of running this is covered by our sponsors and supporters — not by you.
       </p>
     </div>
     <div style="display: flex; flex-direction: column; gap: 16px;">
-      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid var(--copper); border-radius: 0 8px 8px 0; padding: 16px 20px;">
-        <div style="font-size: 1.1rem; font-weight: 700; color: white;">Register online</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">No app, no install, just a browser</div>
+      <div class="hosted-card">
+        <div class="hosted-card-title">Register online</div>
+        <div class="hosted-card-sub">No app, no install, just a browser</div>
       </div>
-      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid var(--copper); border-radius: 0 8px 8px 0; padding: 16px 20px;">
-        <div style="font-size: 1.1rem; font-weight: 700; color: white;">Your own dedicated coach</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">Remembers your cues session to session</div>
+      <div class="hosted-card">
+        <div class="hosted-card-title">Your own dedicated coach</div>
+        <div class="hosted-card-sub">Remembers your cues session to session</div>
       </div>
-      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid var(--copper); border-radius: 0 8px 8px 0; padding: 16px 20px;">
-        <div style="font-size: 1.1rem; font-weight: 700; color: white;">Voice notes from the track</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">Log a session in 60 seconds</div>
+      <div class="hosted-card">
+        <div class="hosted-card-title">Voice notes from the track</div>
+        <div class="hosted-card-sub">Log a session in 60 seconds</div>
       </div>
-      <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-left: 3px solid var(--copper); border-radius: 0 8px 8px 0; padding: 16px 20px;">
-        <div style="font-size: 1.1rem; font-weight: 700; color: white;">Free. Sponsor-supported.</div>
-        <div style="font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">Athletes never pay, ever</div>
+      <div class="hosted-card">
+        <div class="hosted-card-title">Free. Sponsor-supported.</div>
+        <div class="hosted-card-sub">Athletes never pay, ever</div>
       </div>
       <a href="https://tally.so/r/aQEbgW" target="_blank" style="display: block; background: var(--copper); color: white; text-align: center; padding: 14px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 8px;">Register your interest →</a>
     </div>
@@ -892,7 +1036,7 @@
 
 <!-- SPONSOR SECTION -->
 <section style="background: var(--off-white); padding: 80px 32px; border-top: 1px solid var(--border);">
-  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+  <div class="sponsor-inner">
     <div>
       <div class="section-label">Support the mission</div>
       <h2 class="section-title">Partner with Project Throwha</h2>
@@ -901,23 +1045,23 @@
         good coaching should be accessible to everyone — regardless of geography, disability, or background.
       </p>
       <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 24px;">
-        If you’re a brand looking to reach a highly engaged Australian athletic audience,
-        or an individual who wants to help keep this resource free, we’d love to hear from you.
+        If you're a brand looking to reach a highly engaged Australian athletic audience,
+        or an individual who wants to help keep this resource free, we'd love to hear from you.
       </p>
-      <a href="https://tally.so/r/PdYMLP" target="_blank" style="display: inline-block; background: var(--navy); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; margin-right: 12px;">Become a sponsor →</a>
+      <a href="https://tally.so/r/PdYMLP" target="_blank" style="display: inline-block; background: var(--navy); color: white; padding: 14px 28px; border-radius: 8px; font-weight: 700; text-decoration: none;">Become a sponsor →</a>
     </div>
     <div style="display: flex; flex-direction: column; gap: 16px;">
-      <div style="background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 20px 24px;">
-        <div style="font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Brand Sponsorship</div>
-        <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6;">Reach an engaged Australian athletic audience. Logo placement, athlete partnerships, and authentic brand association with the Project Throwha mission.</p>
+      <div class="sponsor-card">
+        <h4>Brand Sponsorship</h4>
+        <p>Reach an engaged Australian athletic audience. Logo placement, athlete partnerships, and authentic brand association with the Project Throwha mission.</p>
       </div>
-      <div style="background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 20px 24px;">
-        <div style="font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Infrastructure Support</div>
-        <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6;">Help fund the hosted platform — the server costs that keep every athlete's dedicated coach running for free. 100% goes toward athlete access.</p>
+      <div class="sponsor-card">
+        <h4>Infrastructure Support</h4>
+        <p>Help fund the hosted platform — the server costs that keep every athlete’s dedicated coach running for free. 100% goes toward athlete access.</p>
       </div>
-      <div style="background: white; border: 1.5px solid var(--border); border-radius: 10px; padding: 20px 24px;">
-        <div style="font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Individual Donation</div>
-        <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6;">Believe in the mission? Even a small contribution helps keep this free. <a href="mailto:enquiries@throwha.com" style="color: var(--copper);">Get in touch</a> and we’ll set something up.</p>
+      <div class="sponsor-card">
+        <h4>Individual Donation</h4>
+        <p>Believe in the mission? Even a small contribution helps keep this free. <a href="mailto:enquiries@throwha.com" style="color: var(--copper);">Get in touch</a> and we'll set something up.</p>
       </div>
     </div>
   </div>
@@ -931,7 +1075,7 @@
   </p>
   <p>
     Download project-throwha.skill and start your first session today.
-    No subscription, no account, no paywall — ever.
+    No subscription, no account, no paywall - ever.
   </p>
   <a href="project-throwha.skill" download class="btn-white">Download project-throwha.skill</a>
   <p style="margin-top: 20px; font-size: 13px; opacity: 0.7;">
