@@ -701,7 +701,10 @@
       .who-grid { grid-template-columns: 1fr; }
       .event-pills { justify-content: center; }
       .hosted-inner { grid-template-columns: 1fr; gap: 32px; }
-      .coach-pricing-grid { grid-template-columns: 1fr !important; max-width: 360px !important; }
+      .coach-pricing-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+      .coach-pricing-section { padding: 48px 16px !important; }
+      .coach-pricing-section h2 { font-size: 1.4rem !important; }
+      .coach-pricing-section > div { max-width: 100% !important; }
       .sponsor-inner { grid-template-columns: 1fr; gap: 32px; }
       .mission h2 { font-size: 1.4rem; }
       .section-title { font-size: 1.4rem; }
@@ -1026,7 +1029,7 @@
 </section>
 
 <!-- COACH PRICING -->
-<section style="background: var(--navy); padding: 80px 32px; color: white;">
+<section class="coach-pricing-section" style="background: var(--navy); padding: 80px 32px; color: white;">
   <div style="max-width: 900px; margin: 0 auto; text-align: center;">
     <div class="section-label" style="color: var(--copper-light);">For Coaches</div>
     <h2 class="section-title" style="color: white; margin-bottom: 12px;">Coaching access. No surprises.</h2>
