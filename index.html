@@ -1085,37 +1085,53 @@
     </p>
 
     <!-- Milestone track -->
-    <div style="position: relative; max-width: 700px; margin: 0 auto 56px;">
+    <div style="position: relative; max-width: 960px; margin: 0 auto 56px; overflow-x: auto;">
       <!-- Track line -->
-      <div style="position: absolute; top: 22px; left: 10%; right: 10%; height: 3px; background: rgba(255,255,255,0.12); border-radius: 2px;"></div>
+      <div style="position: absolute; top: 22px; left: 5%; right: 5%; height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; min-width: 600px;"></div>
       <!-- Active portion -->
-      <div style="position: absolute; top: 22px; left: 10%; width: 0%; height: 3px; background: var(--copper); border-radius: 2px;"></div>
+      <div style="position: absolute; top: 22px; left: 5%; width: 0%; height: 3px; background: var(--copper); border-radius: 2px;"></div>
 
       <!-- Milestones -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; position: relative;">
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; min-width: 600px;">
 
-        <!-- Alpha (current) -->
-        <div style="text-align: center; padding: 0 8px;">
-          <div style="width: 44px; height: 44px; background: var(--copper); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: white; border: 3px solid var(--copper); box-shadow: 0 0 0 6px rgba(192,123,62,0.2);">&#10003;</div>
-          <div style="font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--copper-light); margin-bottom: 8px;">Now</div>
-          <div style="font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 8px;">Closed Alpha</div>
-          <div style="font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.6;">Invite-only. Free for everyone. Building with real athletes &amp; coaches.</div>
+        <!-- 1. Alpha (current) -->
+        <div style="text-align: center; padding: 0 6px;">
+          <div style="width: 44px; height: 44px; background: var(--copper); border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: white; border: 3px solid var(--copper); box-shadow: 0 0 0 6px rgba(192,123,62,0.2);">&#10003;</div>
+          <div style="font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--copper-light); margin-bottom: 6px;">Now</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: white; margin-bottom: 6px;">Closed Alpha</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.5); line-height: 1.6;">Invite-only. Free for everyone. Building with real athletes &amp; coaches.</div>
         </div>
 
-        <!-- Beta unlock -->
-        <div style="text-align: center; padding: 0 8px;">
-          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.06); border: 3px solid rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.4);">2</div>
-          <div style="font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px;">$6,000 AUD</div>
-          <div style="font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,0.7); margin-bottom: 8px;">Beta</div>
-          <div style="font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.6;">10 coaches. 100 athletes. $49/month for coaches. Athletes always free.</div>
+        <!-- 2. Beta -->
+        <div style="text-align: center; padding: 0 6px;">
+          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.06); border: 3px solid rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.4);">2</div>
+          <div style="font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 6px;">$6,000 AUD</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: rgba(255,255,255,0.7); margin-bottom: 6px;">Beta</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.4); line-height: 1.6;">10 coaches. 100 athletes. $49/month for coaches. Athletes always free.</div>
         </div>
 
-        <!-- Full release unlock -->
-        <div style="text-align: center; padding: 0 8px;">
-          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.06); border: 3px solid rgba(255,255,255,0.12); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.25);">3</div>
-          <div style="font-size: 9pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 8px;">$20,000 AUD</div>
-          <div style="font-size: 1.1rem; font-weight: 800; color: rgba(255,255,255,0.5); margin-bottom: 8px;">Public Launch</div>
-          <div style="font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6;">Open to all athletes &amp; coaches. National scale. Full feature set.</div>
+        <!-- 3. Public Launch -->
+        <div style="text-align: center; padding: 0 6px;">
+          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.06); border: 3px solid rgba(255,255,255,0.15); border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.3);">3</div>
+          <div style="font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 6px;">$20,000 AUD</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: rgba(255,255,255,0.5); margin-bottom: 6px;">Public Launch</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.3); line-height: 1.6;">Open to all athletes &amp; coaches. Unlimited scale. Full feature set.</div>
+        </div>
+
+        <!-- 4. National Launch -->
+        <div style="text-align: center; padding: 0 6px;">
+          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.04); border: 3px solid rgba(255,255,255,0.1); border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.2);">4</div>
+          <div style="font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.2); margin-bottom: 6px;">$40,000 AUD</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: rgba(255,255,255,0.4); margin-bottom: 6px;">National Launch</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.2); line-height: 1.6;">Sovereign data hosting in Australia. AWS Sydney. Privacy Act compliance. Security audit.</div>
+        </div>
+
+        <!-- 5. International Launch -->
+        <div style="text-align: center; padding: 0 6px;">
+          <div style="width: 44px; height: 44px; background: rgba(255,255,255,0.03); border: 3px solid rgba(255,255,255,0.08); border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 900; color: rgba(255,255,255,0.15);">5</div>
+          <div style="font-size: 8pt; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.15); margin-bottom: 6px;">$120,000 AUD</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: rgba(255,255,255,0.3); margin-bottom: 6px;">International Launch</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.15); line-height: 1.6;">Multi-region sovereign data. AU · UK · EU · US. GDPR &amp; ISO 27001 certified.</div>
         </div>
 
       </div>
