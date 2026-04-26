@@ -1,0 +1,730 @@
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2cd85201-9e85-4fbe-ad51-01d0b2cfe7fe"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0E1828; color: #F5EDE0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { text-decoration: none; color: #C97B5A; transition: color 0.2s; }
+  a:hover { color: #D08562; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(14, 24, 40, 0.85);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+  }
+  .nav-inner {
+    max-width: 1320px; margin: 0 auto; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font: 800 22px 'Inter'; letter-spacing: -0.04em; color: #F5EDE0;
+    display: inline-flex; align-items: center; line-height: 0;
+  }
+  .logo span { color: #C97B5A; }
+  .logo img {
+    width: auto; display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+  }
+  .nav .logo img { height: 36px; }
+  .footer-brand .logo img { height: 52px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.55);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .nav-links a:hover { color: #F5EDE0; }
+  .nav-cta-group { display: flex; gap: 10px; align-items: center; }
+  .nav-sponsor {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(201, 123, 90, 0.85);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border: 1px solid rgba(201, 123, 90, 0.3);
+    padding: 7px 14px; border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .nav-sponsor:hover { background: rgba(201, 123, 90, 0.1); color: #C97B5A; }
+  .nav-cta {
+    background: #C97B5A; color: #0E1828;
+    padding: 9px 16px; border-radius: 6px;
+    font: 600 13px 'Inter';
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #D08562; color: #0E1828; }
+
+  /* Hero */
+  .legal-hero {
+    padding: 72px 28px 56px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.08);
+    background: radial-gradient(ellipse at top, rgba(201, 123, 90, 0.06), transparent 60%);
+  }
+  .legal-hero-inner { max-width: 1240px; margin: 0 auto; }
+  .legal-eyebrow {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .legal-eyebrow::before { content: ''; width: 28px; height: 1px; background: #C97B5A; }
+  .legal-title {
+    font: 700 clamp(40px, 5.5vw, 64px)/1.05 'Inter';
+    letter-spacing: -0.035em; margin-bottom: 24px;
+  }
+  .legal-meta {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    font: 500 12px 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(245, 237, 224, 0.6);
+  }
+  .legal-meta .sep { color: rgba(245, 237, 224, 0.25); }
+  .legal-meta .compliance {
+    color: #7AB87C;
+    border: 1px solid rgba(122, 184, 124, 0.25);
+    padding: 5px 10px; border-radius: 100px;
+    font-size: 10px;
+  }
+
+  /* Layout */
+  .legal-layout {
+    max-width: 1240px; margin: 0 auto;
+    display: grid; grid-template-columns: 260px 1fr;
+    gap: 64px; padding: 64px 28px 96px;
+  }
+  .toc {
+    position: sticky; top: 88px; align-self: start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto; padding-right: 8px;
+  }
+  .toc-label {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.08);
+  }
+  .toc-list { list-style: none; }
+  .toc-list a {
+    display: block;
+    padding: 9px 0 9px 14px;
+    font: 500 12.5px 'Inter';
+    color: rgba(245, 237, 224, 0.55);
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .toc-list a:hover {
+    color: #F5EDE0;
+    border-left-color: rgba(201, 123, 90, 0.4);
+  }
+  .toc-list .num {
+    display: inline-block; width: 22px;
+    color: rgba(201, 123, 90, 0.7);
+    font: 600 11px 'JetBrains Mono', monospace;
+  }
+
+  /* Article */
+  .legal-article {
+    max-width: 760px;
+    font-size: 16px; line-height: 1.75;
+  }
+  .legal-intro {
+    background: rgba(201, 123, 90, 0.06);
+    border-left: 3px solid #C97B5A;
+    padding: 24px 28px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 56px;
+  }
+  .legal-intro p {
+    font-size: 15.5px; line-height: 1.65;
+    color: rgba(245, 237, 224, 0.85);
+    margin-bottom: 0;
+  }
+  .legal-section {
+    margin-bottom: 56px;
+    scroll-margin-top: 88px;
+  }
+  .legal-section h2 {
+    font: 700 28px 'Inter';
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245, 237, 224, 0.08);
+  }
+  .legal-section h2 .num {
+    display: block;
+    font: 600 12px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+  .legal-section h3 {
+    font: 600 17px 'Inter';
+    margin: 28px 0 12px;
+    color: #C97B5A;
+    letter-spacing: -0.005em;
+  }
+  .legal-article p { margin-bottom: 16px; color: rgba(245, 237, 224, 0.8); }
+  .legal-article ul {
+    margin: 0 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .legal-article li {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .legal-article li::before {
+    content: '→'; position: absolute; left: 0;
+    color: #C97B5A; font-weight: 600;
+  }
+  .legal-article strong { color: #F5EDE0; font-weight: 600; }
+  .legal-article em { color: rgba(245, 237, 224, 0.95); font-style: italic; }
+
+  /* Identity block */
+  .identity-block {
+    background: rgba(245, 237, 224, 0.03);
+    border: 1px solid rgba(245, 237, 224, 0.08);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    font: 500 14px 'JetBrains Mono', monospace;
+    line-height: 2;
+  }
+  .identity-block .label {
+    color: #C97B5A; display: inline-block; width: 90px;
+  }
+
+  /* Pricing table */
+  .pricing-table {
+    width: 100%; border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    border: 1px solid rgba(245, 237, 224, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .pricing-table th {
+    text-align: left;
+    background: rgba(245, 237, 224, 0.04);
+    border-bottom: 1px solid rgba(245, 237, 224, 0.1);
+    padding: 14px 16px;
+    color: #C97B5A;
+    font: 600 11px 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .pricing-table td {
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+    padding: 18px 16px;
+    vertical-align: top;
+    color: rgba(245, 237, 224, 0.82);
+    line-height: 1.55;
+  }
+  .pricing-table tr:last-child td { border-bottom: none; }
+  .pricing-table .tier-name {
+    color: #F5EDE0; font-weight: 700; font-size: 15px;
+  }
+  .pricing-table .tier-name .badge {
+    display: inline-block;
+    margin-left: 8px;
+    font: 600 9px 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+    padding: 3px 7px;
+    border-radius: 100px;
+    background: rgba(201, 123, 90, 0.15);
+    color: #C97B5A;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+  .pricing-table .price-amount {
+    color: #F5EDE0; font-weight: 600;
+  }
+
+  /* Highlight boxes */
+  .highlight-box {
+    background: rgba(201, 123, 90, 0.06);
+    border: 1px solid rgba(201, 123, 90, 0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .highlight-box.success {
+    background: rgba(122, 184, 124, 0.05);
+    border-color: rgba(122, 184, 124, 0.25);
+  }
+  .highlight-box.warning {
+    background: rgba(201, 123, 90, 0.08);
+    border-color: rgba(201, 123, 90, 0.4);
+    border-left-width: 3px;
+  }
+  .highlight-box-title {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #C97B5A;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+  .highlight-box.success .highlight-box-title { color: #7AB87C; }
+  .highlight-box.warning .highlight-box-title { color: #D08562; }
+  .highlight-box p { color: rgba(245, 237, 224, 0.88); }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  .highlight-box strong { color: #F5EDE0; }
+
+  /* Contact block */
+  .contact-block {
+    background: rgba(245, 237, 224, 0.03);
+    border: 1px solid rgba(245, 237, 224, 0.08);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 20px 0;
+  }
+  .contact-block-title {
+    font: 600 14px 'Inter';
+    color: #F5EDE0;
+    margin-bottom: 14px;
+  }
+  .contact-block-grid {
+    display: grid; gap: 8px;
+    font: 500 14px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .contact-block-grid span:first-child { color: #C97B5A; }
+
+  /* Footer */
+  .footer {
+    padding: 56px 28px 40px;
+    border-top: 1px solid rgba(245, 237, 224, 0.08);
+    background: #0A1422;
+  }
+  .footer-inner { max-width: 1320px; margin: 0 auto; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+  }
+  .footer-brand .logo {
+    font: 800 26px 'Inter'; letter-spacing: -0.04em;
+    margin-bottom: 12px; display: block;
+  }
+  .footer-brand p {
+    font-size: 13.5px; line-height: 1.6;
+    color: rgba(245, 237, 224, 0.6); max-width: 320px;
+  }
+  .footer-col h5 {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: grid; gap: 10px; }
+  .footer-col a, .footer-col li {
+    font-size: 13.5px; line-height: 1.5;
+    color: rgba(245, 237, 224, 0.7);
+  }
+  .footer-col a:hover { color: #C97B5A; }
+  .footer-meta {
+    padding-top: 24px;
+    display: grid; gap: 14px;
+  }
+  .footer-meta-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px; flex-wrap: wrap;
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.45); letter-spacing: 0.05em;
+  }
+  .footer-meta .abn {
+    color: rgba(245, 237, 224, 0.7); font-weight: 600;
+  }
+  .footer-legal { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-legal a {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.6);
+    letter-spacing: 0.05em;
+  }
+  .footer-legal a.current { color: #C97B5A; }
+  .footer-compliance {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: rgba(201, 123, 90, 0.75);
+    letter-spacing: 0.06em; line-height: 1.6;
+    padding-top: 4px;
+    border-top: 1px solid rgba(245, 237, 224, 0.05);
+  }
+  .footer-compliance::before {
+    content: '✓ '; color: #7AB87C; font-weight: 700; margin-right: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .legal-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc {
+      position: static; max-height: none;
+      padding: 20px 24px;
+      background: rgba(245, 237, 224, 0.03);
+      border: 1px solid rgba(245, 237, 224, 0.08);
+      border-radius: 12px;
+    }
+    .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .legal-hero { padding: 56px 24px 48px; }
+    .legal-layout { padding: 40px 24px 64px; }
+    .toc-list { grid-template-columns: 1fr; }
+    .pricing-table { font-size: 13px; }
+    .pricing-table th, .pricing-table td { padding: 12px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-meta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+</style>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/assets/throwha-logo.png" alt="Throwha" /></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#events">Events</a>
+      <a href="/#how">Get Started</a>
+      <a href="/#about">About</a>
+    </div>
+    <div class="nav-cta-group">
+      <a href="/#sponsor" class="nav-sponsor">Sponsor</a>
+      <a href="/#" class="nav-cta">Get free coach</a>
+    </div>
+  </div>
+</nav>
+
+<header class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">LEGAL — TERMS</div>
+    <h1 class="legal-title">Terms of Service</h1>
+    <div class="legal-meta">
+      <span>Last updated: April 2026</span>
+      <span class="sep">/</span>
+      <span>Version 1.1</span>
+      <span class="sep">/</span>
+      <span class="compliance">✓ AUSTRALIAN CONSUMER LAW PROTECTED</span>
+    </div>
+  </div>
+</header>
+
+<div class="legal-layout">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="num">01</span>Acceptance of Terms</a></li>
+      <li><a href="#s2"><span class="num">02</span>Account Registration</a></li>
+      <li><a href="#s3"><span class="num">03</span>Permitted Use</a></li>
+      <li><a href="#s4"><span class="num">04</span>Coach &amp; Athlete Roles</a></li>
+      <li><a href="#s5"><span class="num">05</span>Coach–Athlete Data Sharing</a></li>
+      <li><a href="#s6"><span class="num">06</span>Prohibited Conduct</a></li>
+      <li><a href="#s7"><span class="num">07</span>AI-Generated Coaching</a></li>
+      <li><a href="#s8"><span class="num">08</span>Intellectual Property</a></li>
+      <li><a href="#s9"><span class="num">09</span>Subscription &amp; Payment</a></li>
+      <li><a href="#s10"><span class="num">10</span>Termination</a></li>
+      <li><a href="#s11"><span class="num">11</span>Limitation of Liability</a></li>
+      <li><a href="#s12"><span class="num">12</span>Governing Law</a></li>
+      <li><a href="#s13"><span class="num">13</span>Dispute Resolution</a></li>
+      <li><a href="#s14"><span class="num">14</span>Modifications</a></li>
+      <li><a href="#s15"><span class="num">15</span>General</a></li>
+    </ul>
+  </aside>
+
+  <article class="legal-article">
+
+    <div class="legal-intro">
+      <p>Please read these Terms of Service carefully before using the Throwha platform. By creating an account or using any part of the service, you agree to be bound by these terms. If you do not agree, do not use the platform.</p>
+    </div>
+
+    <section class="legal-section" id="s1">
+      <h2><span class="num">SECTION 01</span>Acceptance of Terms</h2>
+      <p>These Terms of Service ("Terms") constitute a legally binding agreement between you ("User") and Throwha ("we", "us", "our"), operated by Lee O'Halloran (ABN 48 596 170 512), based in New South Wales, Australia.</p>
+      <p>By accessing or using the Throwha platform available at <a href="https://throwha.com">throwha.com</a> and any associated applications or services (collectively, the "Platform"), you confirm that you have read, understood, and agree to be bound by these Terms and our <a href="/privacy-policy">Privacy Policy</a>.</p>
+      <p>If you are using the Platform on behalf of an organisation, you represent that you have authority to bind that organisation to these Terms.</p>
+      <p>We may update these Terms from time to time. Continued use of the Platform after changes constitutes acceptance of the revised Terms. We will notify you of material changes via email or in-app notification.</p>
+      <div class="identity-block">
+        <div><span class="label">Operator</span>Lee O'Halloran</div>
+        <div><span class="label">ABN</span>48 596 170 512</div>
+        <div><span class="label">Location</span>New South Wales, Australia</div>
+        <div><span class="label">Contact</span><a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></div>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s2">
+      <h2><span class="num">SECTION 02</span>Account Registration</h2>
+      <p>To access the Platform you must create an account. You agree to:</p>
+      <ul>
+        <li>Provide accurate, current, and complete information during registration;</li>
+        <li>Maintain and promptly update your account information;</li>
+        <li>Keep your password secure and not share it with third parties;</li>
+        <li>Notify us immediately at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a> if you suspect unauthorised access to your account;</li>
+        <li>Be responsible for all activity that occurs under your account.</li>
+      </ul>
+      <p>The Platform is not directed at children under the age of 13, and we do not knowingly permit users under 13 to create accounts. Users between 13 and 17 years of age may only create and use an account with the verified consent of a parent or legal guardian who accepts these Terms on the minor's behalf and assumes responsibility for the minor's use of the Platform.</p>
+      <p>We reserve the right to refuse registration or suspend accounts at our sole discretion.</p>
+    </section>
+
+    <section class="legal-section" id="s3">
+      <h2><span class="num">SECTION 03</span>Permitted Use</h2>
+      <p>The Platform is designed to support throws athletes (shot put, discus, javelin, hammer) and their coaches with AI-assisted technique analysis, training logs, performance tracking, and coaching communications.</p>
+      <p>You may use the Platform solely for lawful, personal, non-commercial purposes consistent with these Terms. You agree not to:</p>
+      <ul>
+        <li>Use the Platform for any unlawful purpose or in violation of any applicable laws or regulations;</li>
+        <li>Reproduce, distribute, modify, or create derivative works of Platform content without our written consent;</li>
+        <li>Attempt to reverse engineer, decompile, or extract the source code of any part of the Platform;</li>
+        <li>Introduce viruses, malware, or any other harmful code;</li>
+        <li>Use automated scripts, bots, or scraping tools to access the Platform;</li>
+        <li>Harass, abuse, or harm other users;</li>
+        <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity;</li>
+        <li>Use the Platform in any way that could disable, overburden, or impair its proper functioning.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s4">
+      <h2><span class="num">SECTION 04</span>Coach and Athlete Roles</h2>
+
+      <h3>Athlete Accounts (Free)</h3>
+      <p>Athlete accounts are provided free of charge. Athletes can log training sessions, upload video footage, receive AI-generated technique feedback, and manage their training data. Athletes retain full ownership of their personal data and training content (see Section 8).</p>
+
+      <h3>Coach Accounts (Subscription)</h3>
+      <p>Coach accounts require a paid subscription (see Section 9). Coaches can manage athlete groups, review athlete-shared training data, add coaching notes and cues, and access enhanced analytics features. Coaches may only access athlete data that has been explicitly shared with them by the athlete.</p>
+
+      <h3>Coach–Athlete Relationships</h3>
+      <p>Coaches are responsible for the accuracy and appropriateness of any coaching feedback, programmes, or instructions they provide through the Platform. Throwha does not supervise, verify, or endorse the qualifications or advice of any coach registered on the Platform. Athletes are encouraged to verify a coach's credentials independently before entering into a coaching relationship.</p>
+    </section>
+
+    <section class="legal-section" id="s5">
+      <h2><span class="num">SECTION 05</span>Data Sharing Between Coaches and Athletes</h2>
+      <p>Athlete data sharing is athlete-controlled at all times. Specifically:</p>
+      <ul>
+        <li>Athletes must explicitly grant a coach access to their data before that coach can view any training logs, video, classification information, or session notes;</li>
+        <li>Athletes may revoke coach access at any time from their account settings;</li>
+        <li>Upon revocation, coaches lose access to the athlete's data immediately and may not retain or copy data previously accessed;</li>
+        <li>Coaches must not share, sell, or otherwise distribute athlete data obtained through the Platform to any third party;</li>
+        <li>We do not automatically share athlete data with coaches — sharing is initiated solely by the athlete.</li>
+      </ul>
+      <div class="highlight-box success">
+        <div class="highlight-box-title">✓ The trust model</div>
+        <p>The athlete-coach data flow is athlete-controlled by design. Coaches see only what athletes have explicitly shared, and athletes can revoke that access at any time.</p>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s6">
+      <h2><span class="num">SECTION 06</span>Prohibited Conduct</h2>
+      <p>In addition to the general use restrictions in Section 3, you specifically agree not to:</p>
+      <ul>
+        <li>Upload or transmit content that is defamatory, obscene, threatening, or discriminatory;</li>
+        <li>Upload video or images of individuals without their consent;</li>
+        <li>Upload content that infringes any third party's intellectual property rights;</li>
+        <li>Use any AI coaching outputs from the Platform to make medical, physiotherapy, or health decisions without consulting a qualified professional;</li>
+        <li>Misrepresent AI-generated coaching feedback as advice from a qualified human coach or medical professional;</li>
+        <li>Attempt to manipulate, circumvent, or exploit AI coaching systems in ways that produce unsafe training recommendations.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s7">
+      <h2><span class="num">SECTION 07</span>AI-Generated Coaching — Important Disclaimer</h2>
+      <div class="highlight-box warning">
+        <div class="highlight-box-title">⚠ This section is important — please read carefully</div>
+        <p>The Throwha Platform uses artificial intelligence (powered by <strong>Anthropic's Claude</strong>) to generate technique feedback, training suggestions, and coaching cues ("<strong>AI Coaching Outputs</strong>").</p>
+      </div>
+      <p>AI Coaching Outputs are provided for <strong>informational and educational purposes only</strong>. They do not constitute:</p>
+      <ul>
+        <li>Professional athletic coaching advice from a qualified coach;</li>
+        <li>Medical, physiotherapy, sports medicine, or health advice;</li>
+        <li>A substitute for assessment by a qualified sports professional or medical practitioner.</li>
+      </ul>
+      <p><strong>Before making any changes to your training regime based on AI Coaching Outputs, you should consult a qualified coach, physiotherapist, sports medicine professional, or medical practitioner, as appropriate.</strong></p>
+      <p>AI systems can make errors. Outputs may be incomplete, inaccurate, or inappropriate for your individual circumstances. Throwha makes no warranty regarding the accuracy, suitability, or safety of any AI Coaching Output.</p>
+      <p>To the maximum extent permitted by law, Throwha accepts no liability for any injury, harm, loss, or damage arising from your use of or reliance on AI Coaching Outputs. See our <a href="/liability-disclaimer">Liability Disclaimer</a> for full details.</p>
+    </section>
+
+    <section class="legal-section" id="s8">
+      <h2><span class="num">SECTION 08</span>Intellectual Property</h2>
+
+      <h3>Throwha's Intellectual Property</h3>
+      <p>The Platform, including its design, software, algorithms, AI systems, branding, logos, and all content created by Throwha, is owned by or licensed to Throwha. All rights are reserved. You may not use, copy, or distribute any part of the Platform without our prior written consent.</p>
+
+      <h3>Your Content and Data</h3>
+      <p>Athletes own their personal data and training content uploaded to the Platform, including training session logs, video footage, technique notes, and personal information ("<strong>User Content</strong>"). We do not claim ownership of your User Content.</p>
+      <p>By uploading User Content, you grant Throwha a limited, non-exclusive, royalty-free licence to store, process, and display your User Content solely for the purpose of operating and improving the Platform and providing the services to you. We will not use your User Content for any other purpose without your explicit consent.</p>
+      <p>You represent that you have all rights necessary to upload your User Content and that doing so does not infringe any third party's rights.</p>
+    </section>
+
+    <section class="legal-section" id="s9">
+      <h2><span class="num">SECTION 09</span>Subscription and Payment Terms (Coaches)</h2>
+      <p>Coach accounts require a paid subscription. Athlete accounts are, and will remain, free of charge. Current pricing is displayed on the Platform at the time of subscription and is set out below.</p>
+
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Pricing</th>
+            <th>What's Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tier-name">Beta <span class="badge">Next</span></td>
+            <td><span class="price-amount">$29 AUD/mo</span></td>
+            <td>10 athletes per coach. Capped at 10 coaches and 100 athletes total during the Beta period.</td>
+          </tr>
+          <tr>
+            <td class="tier-name">Full Release (National)</td>
+            <td><span class="price-amount">$59 AUD/mo</span><br><span style="color: rgba(245, 237, 224, 0.6); font-size: 13px;">or $590 AUD/yr (2 months free)</span></td>
+            <td>Up to 10 athletes per coach. Additional athletes billed at <strong>$5 AUD/mo</strong> per athlete beyond 10.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Operational terms</h3>
+      <ul>
+        <li><strong>Billing:</strong> Subscriptions are billed monthly or annually, as selected at checkout. Payments are processed securely via our third-party payment provider.</li>
+        <li><strong>Renewal:</strong> Subscriptions automatically renew at the end of each billing period unless cancelled before the renewal date.</li>
+        <li><strong>Cancellation:</strong> You may cancel your subscription at any time via your account settings. Access continues until the end of the current billing period. No refund is provided for unused time within a billing period unless otherwise required by law.</li>
+        <li><strong>Price changes:</strong> We will provide at least 30 days' notice of any price changes. Continued use after the change takes effect constitutes acceptance.</li>
+        <li><strong>Taxes:</strong> All prices displayed on the Platform are in Australian Dollars (AUD). Where Throwha is registered for GST, displayed prices are inclusive of GST and a tax invoice will be issued at the point of sale. Where Throwha is not yet registered for GST (i.e., turnover below the Australian Tax Office threshold), no GST is charged on coach subscriptions, and this will be clearly indicated on the tax invoice.</li>
+        <li><strong>Failed payments:</strong> If a payment fails, we may suspend your account until payment is resolved. We will notify you via email.</li>
+      </ul>
+
+      <div class="highlight-box success">
+        <div class="highlight-box-title">✓ Australian Consumer Law preserved</div>
+        <p>Australian Consumer Law may provide additional rights regarding refunds. Nothing in these Terms excludes or limits any rights you have under applicable consumer protection legislation that cannot be excluded by agreement.</p>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s10">
+      <h2><span class="num">SECTION 10</span>Termination</h2>
+
+      <h3>By you</h3>
+      <p>You may close your account at any time by contacting us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a> or using the account deletion option in your settings. Upon closure:</p>
+      <ul>
+        <li>Your personal data will be deleted within 30 days in accordance with our <a href="/privacy-policy">Privacy Policy</a>, except where we are required to retain specific records by law (for example, financial records retained for 7 years for tax purposes);</li>
+        <li>Deleted data may persist in encrypted backups for up to 90 days before being fully purged;</li>
+        <li>Training logs, video footage, and coaching content associated with your account will be deleted on the same timeline.</li>
+      </ul>
+
+      <h3>By us</h3>
+      <p>We may suspend or terminate your account immediately, without notice, if we reasonably believe you have breached these Terms, engaged in fraudulent activity, or if required to do so by law. We may also terminate accounts with 30 days' notice for operational or business reasons.</p>
+
+      <h3>Upon termination</h3>
+      <p>(a) your right to use the Platform ceases immediately; (b) we will handle your data in accordance with our Privacy Policy and applicable law; (c) provisions of these Terms that by their nature should survive termination — including intellectual property, limitation of liability, governing law, and dispute resolution — will continue to apply.</p>
+    </section>
+
+    <section class="legal-section" id="s11">
+      <h2><span class="num">SECTION 11</span>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law:</p>
+      <ul>
+        <li>The Platform is provided on an "as is" and "as available" basis without warranties of any kind, express or implied;</li>
+        <li>Throwha does not warrant that the Platform will be uninterrupted, error-free, or free of harmful components;</li>
+        <li>Throwha's total aggregate liability to you for any claims arising from or relating to these Terms or your use of the Platform shall not exceed the greater of: (a) the total amount paid by you to Throwha in the three months preceding the claim, or (b) AUD $100;</li>
+        <li>Throwha is not liable for any indirect, incidental, special, consequential, or punitive damages, including loss of data, loss of profits, personal injury, or property damage arising from your use of the Platform.</li>
+      </ul>
+      <div class="highlight-box success">
+        <div class="highlight-box-title">✓ Australian Consumer Law preserved</div>
+        <p>Nothing in these Terms excludes or limits Throwha's liability for death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any liability that cannot be excluded under the Australian Consumer Law or other applicable legislation.</p>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s12">
+      <h2><span class="num">SECTION 12</span>Governing Law and Jurisdiction</h2>
+      <p>These Terms are governed by the laws of <strong>New South Wales, Australia</strong>. You agree to submit to the non-exclusive jurisdiction of the courts of New South Wales and the Federal Court of Australia for any disputes arising from or relating to these Terms or your use of the Platform.</p>
+    </section>
+
+    <section class="legal-section" id="s13">
+      <h2><span class="num">SECTION 13</span>Dispute Resolution</h2>
+      <p>We encourage you to contact us first at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a> to resolve any dispute informally. We will make reasonable efforts to resolve any complaint within 30 days.</p>
+      <p>If a dispute cannot be resolved informally, the parties agree to attempt mediation through a mutually agreed mediator before commencing litigation. The costs of mediation are shared equally unless the mediator determines otherwise.</p>
+      <p>Nothing in this clause prevents either party from seeking urgent injunctive or other interim relief from a court.</p>
+    </section>
+
+    <section class="legal-section" id="s14">
+      <h2><span class="num">SECTION 14</span>Modifications to These Terms</h2>
+      <p>We may modify these Terms at any time. For material changes, we will provide at least 14 days' advance notice by email to your registered address and/or via a prominent notice on the Platform. Changes take effect on the date specified in the notice.</p>
+      <p>Your continued use of the Platform after the effective date of any change constitutes acceptance of the revised Terms. If you do not agree to the revised Terms, you must stop using the Platform and may close your account.</p>
+    </section>
+
+    <section class="legal-section" id="s15">
+      <h2><span class="num">SECTION 15</span>General</h2>
+      <ul>
+        <li><strong>Entire agreement:</strong> These Terms and the <a href="/privacy-policy">Privacy Policy</a> constitute the entire agreement between you and Throwha regarding the Platform and supersede all prior agreements.</li>
+        <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions continue in full force.</li>
+        <li><strong>No waiver:</strong> Failure to enforce any provision does not constitute a waiver of our right to enforce it later.</li>
+        <li><strong>Assignment:</strong> You may not assign your rights or obligations under these Terms without our consent. We may assign our rights to a successor or affiliate.</li>
+        <li><strong>Contact:</strong> For questions about these Terms, contact us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a>.</li>
+      </ul>
+      <div class="contact-block">
+        <div class="contact-block-title">Throwha — Terms Enquiries</div>
+        <div class="contact-block-grid">
+          <div><span>ABN</span> &nbsp;48 596 170 512</div>
+          <div><span>Email</span> &nbsp;<a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></div>
+          <div><span>Website</span> &nbsp;<a href="https://throwha.com">throwha.com</a></div>
+          <div><span>Location</span> &nbsp;New South Wales, Australia</div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="/assets/throwha-logo.png" alt="Throwha" /></a>
+        <p>Full-time digital throws coaching for every athlete. Free. Forever.</p>
+      </div>
+      <div class="footer-col">
+        <h5>// CONTACT</h5>
+        <ul>
+          <li><a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></li>
+          <li><a href="https://instagram.com/throwha_" target="_blank" rel="noopener">Instagram @throwha_</a></li>
+          <li><a href="/#sponsor">Become a sponsor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>// ATHLETES</h5>
+        <ul>
+          <li><a href="/#">Get your free coach</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#events">Events covered</a></li>
+          <li><a href="/#how">Getting started</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>// COACHES</h5>
+        <ul>
+          <li><a href="/#">Register as a coach</a></li>
+          <li><a href="/#about">About Project Throwha</a></li>
+          <li><a href="/#sponsor">Become a partner</a></li>
+          <li><a href="https://instagram.com/throwha_" target="_blank" rel="noopener">Follow @throwha_</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-meta-row">
+        <span class="abn">ABN 48 596 170 512</span>
+        <div class="footer-legal">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service" class="current">Terms of Service</a>
+          <a href="/liability-disclaimer">Liability Disclaimer</a>
+        </div>
+        <span>© 2026 PROJECT THROWHA</span>
+      </div>
+      <div class="footer-compliance">Compliant with the Privacy Act 1988 (Cth) &amp; Australian Privacy Principles · Disability Discrimination Act 1992 (Cth)</div>
+    </div>
+  </div>
+</footer>

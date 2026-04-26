@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Privacy Policy — Throwha</title>
+  <meta name="description" content="How Throwha collects, uses, and protects your personal information. Compliant with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles.">
+  <link rel="canonical" href="https://throwha.com/privacy-policy">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy — Throwha">
+  <meta property="og:description" content="How Throwha collects, uses, and protects your personal information. Compliant with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles.">
+  <meta property="og:url" content="https://throwha.com/privacy-policy">
+  <meta property="og:image" content="https://throwha.com/assets/throwha-logo.png">
+  <meta property="og:site_name" content="Throwha">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Throwha">
+  <meta name="twitter:description" content="How Throwha collects, uses, and protects your personal information. Compliant with the Australian Privacy Act 1988 (Cth) and the Australian Privacy Principles.">
+  <meta name="twitter:image" content="https://throwha.com/assets/throwha-logo.png">
+
+  <link rel="icon" type="image/png" href="/assets/throwha-logo.png">
+  <meta name="theme-color" content="#0E1828">
+</head>
+<body>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2cd85201-9e85-4fbe-ad51-01d0b2cfe7fe"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0E1828; color: #F5EDE0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { text-decoration: none; color: #C97B5A; transition: color 0.2s; }
+  a:hover { color: #D08562; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* === NAV (same as main site) === */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(14, 24, 40, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+  }
+  .nav-inner {
+    max-width: 1320px; margin: 0 auto; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font: 800 22px 'Inter'; letter-spacing: -0.04em; color: #F5EDE0;
+    display: inline-flex; align-items: center; line-height: 0;
+  }
+  .logo span { color: #C97B5A; }
+  .logo img {
+    width: auto; display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+  }
+  .nav .logo img { height: 36px; }
+  .footer-brand .logo img { height: 52px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.55);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .nav-links a:hover { color: #F5EDE0; }
+  .nav-cta-group { display: flex; gap: 10px; align-items: center; }
+  .nav-sponsor {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(201, 123, 90, 0.85);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border: 1px solid rgba(201, 123, 90, 0.3);
+    padding: 7px 14px; border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .nav-sponsor:hover { background: rgba(201, 123, 90, 0.1); color: #C97B5A; }
+  .nav-cta {
+    background: #C97B5A; color: #0E1828;
+    padding: 9px 16px; border-radius: 6px;
+    font: 600 13px 'Inter';
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #D08562; color: #0E1828; }
+
+  /* === LEGAL HERO === */
+  .legal-hero {
+    padding: 72px 28px 56px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.08);
+    background:
+      radial-gradient(ellipse at top, rgba(201, 123, 90, 0.06), transparent 60%);
+  }
+  .legal-hero-inner { max-width: 1240px; margin: 0 auto; }
+  .legal-eyebrow {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .legal-eyebrow::before {
+    content: ''; width: 28px; height: 1px; background: #C97B5A;
+  }
+  .legal-title {
+    font: 700 clamp(40px, 5.5vw, 64px)/1.05 'Inter';
+    letter-spacing: -0.035em; margin-bottom: 24px;
+  }
+  .legal-meta {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    font: 500 12px 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245, 237, 224, 0.6);
+  }
+  .legal-meta .sep { color: rgba(245, 237, 224, 0.25); }
+  .legal-meta .compliance {
+    color: #7AB87C;
+    border: 1px solid rgba(122, 184, 124, 0.25);
+    padding: 5px 10px; border-radius: 100px;
+    font-size: 10px;
+  }
+
+  /* === LAYOUT === */
+  .legal-layout {
+    max-width: 1240px; margin: 0 auto;
+    display: grid; grid-template-columns: 260px 1fr;
+    gap: 64px; padding: 64px 28px 96px;
+  }
+
+  /* === TOC === */
+  .toc {
+    position: sticky; top: 88px;
+    align-self: start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  .toc-label {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.08);
+  }
+  .toc-list { list-style: none; }
+  .toc-list a {
+    display: block;
+    padding: 9px 0 9px 14px;
+    font: 500 12.5px 'Inter';
+    color: rgba(245, 237, 224, 0.55);
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .toc-list a:hover {
+    color: #F5EDE0;
+    border-left-color: rgba(201, 123, 90, 0.4);
+  }
+  .toc-list .num {
+    display: inline-block;
+    width: 22px;
+    color: rgba(201, 123, 90, 0.7);
+    font: 600 11px 'JetBrains Mono', monospace;
+  }
+
+  /* === ARTICLE === */
+  .legal-article {
+    max-width: 760px;
+    font-size: 16px; line-height: 1.75;
+  }
+  .legal-intro {
+    background: rgba(201, 123, 90, 0.06);
+    border-left: 3px solid #C97B5A;
+    padding: 24px 28px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 56px;
+  }
+  .legal-intro p {
+    font-size: 15.5px; line-height: 1.65;
+    color: rgba(245, 237, 224, 0.85);
+    margin-bottom: 12px;
+  }
+  .legal-intro p:last-child { margin-bottom: 0; }
+
+  .legal-section {
+    margin-bottom: 56px;
+    scroll-margin-top: 88px;
+  }
+  .legal-section h2 {
+    font: 700 28px 'Inter';
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245, 237, 224, 0.08);
+  }
+  .legal-section h2 .num {
+    display: block;
+    font: 600 12px 'JetBrains Mono', monospace;
+    color: #C97B5A;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+  .legal-section h3 {
+    font: 600 17px 'Inter';
+    margin: 28px 0 12px;
+    color: #C97B5A;
+    letter-spacing: -0.005em;
+  }
+  .legal-article p {
+    margin-bottom: 16px;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .legal-article ul {
+    margin: 0 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .legal-article li {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .legal-article li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: #C97B5A;
+    font-weight: 600;
+  }
+  .legal-article strong {
+    color: #F5EDE0;
+    font-weight: 600;
+  }
+  .legal-article em {
+    color: rgba(245, 237, 224, 0.95);
+    font-style: italic;
+  }
+
+  /* Identity block */
+  .identity-block {
+    background: rgba(245, 237, 224, 0.03);
+    border: 1px solid rgba(245, 237, 224, 0.08);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 20px;
+    font: 500 14px 'JetBrains Mono', monospace;
+    line-height: 2;
+  }
+  .identity-block .label {
+    color: #C97B5A;
+    display: inline-block;
+    width: 90px;
+  }
+
+  /* Table */
+  .legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    border: 1px solid rgba(245, 237, 224, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .legal-table th {
+    text-align: left;
+    background: rgba(245, 237, 224, 0.04);
+    border-bottom: 1px solid rgba(245, 237, 224, 0.1);
+    padding: 14px 16px;
+    color: #C97B5A;
+    font: 600 11px 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .legal-table td {
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+    padding: 16px;
+    vertical-align: top;
+    color: rgba(245, 237, 224, 0.8);
+    line-height: 1.55;
+  }
+  .legal-table tr:last-child td { border-bottom: none; }
+  .legal-table td:first-child {
+    color: #F5EDE0;
+    font-weight: 600;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: rgba(201, 123, 90, 0.06);
+    border: 1px solid rgba(201, 123, 90, 0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .highlight-box.success {
+    background: rgba(122, 184, 124, 0.05);
+    border-color: rgba(122, 184, 124, 0.25);
+  }
+  .highlight-box-title {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #C97B5A;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .highlight-box.success .highlight-box-title { color: #7AB87C; }
+  .highlight-box p:last-child { margin-bottom: 0; }
+
+  /* Rights grid */
+  .rights-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .right-card {
+    border: 1px solid rgba(245, 237, 224, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.2s;
+  }
+  .right-card:hover {
+    border-color: rgba(201, 123, 90, 0.4);
+    background: rgba(201, 123, 90, 0.03);
+  }
+  .right-card h4 {
+    color: #C97B5A;
+    font: 600 14px 'Inter';
+    margin-bottom: 6px;
+  }
+  .right-card p {
+    font-size: 13.5px; line-height: 1.55;
+    color: rgba(245, 237, 224, 0.7);
+    margin-bottom: 0;
+  }
+
+  /* Contact block */
+  .contact-block {
+    background: rgba(245, 237, 224, 0.03);
+    border: 1px solid rgba(245, 237, 224, 0.08);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 20px 0;
+  }
+  .contact-block-title {
+    font: 600 14px 'Inter';
+    color: #F5EDE0;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .contact-block-grid {
+    display: grid; gap: 8px;
+    font: 500 14px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .contact-block-grid span:first-child { color: #C97B5A; }
+
+  /* === FOOTER (same as main site) === */
+  .footer {
+    padding: 56px 28px 40px;
+    border-top: 1px solid rgba(245, 237, 224, 0.08);
+    background: #0A1422;
+  }
+  .footer-inner { max-width: 1320px; margin: 0 auto; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+  }
+  .footer-brand .logo {
+    font: 800 26px 'Inter'; letter-spacing: -0.04em;
+    margin-bottom: 12px; display: block;
+  }
+  .footer-brand p {
+    font-size: 13.5px; line-height: 1.6;
+    color: rgba(245, 237, 224, 0.6);
+    max-width: 320px;
+  }
+  .footer-col h5 {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: grid; gap: 10px; }
+  .footer-col a, .footer-col li {
+    font-size: 13.5px; line-height: 1.5;
+    color: rgba(245, 237, 224, 0.7);
+  }
+  .footer-col a:hover { color: #C97B5A; }
+  .footer-meta {
+    padding-top: 24px;
+    display: grid; gap: 14px;
+  }
+  .footer-meta-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px; flex-wrap: wrap;
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.45); letter-spacing: 0.05em;
+  }
+  .footer-meta .abn {
+    color: rgba(245, 237, 224, 0.7); font-weight: 600;
+  }
+  .footer-legal {
+    display: flex; gap: 22px; flex-wrap: wrap;
+  }
+  .footer-legal a {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.6);
+    letter-spacing: 0.05em;
+  }
+  .footer-legal a.current { color: #C97B5A; }
+  .footer-compliance {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: rgba(201, 123, 90, 0.75);
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    padding-top: 4px;
+    border-top: 1px solid rgba(245, 237, 224, 0.05);
+  }
+  .footer-compliance::before {
+    content: '✓ '; color: #7AB87C; font-weight: 700; margin-right: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .legal-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc {
+      position: static;
+      max-height: none;
+      padding: 20px 24px;
+      background: rgba(245, 237, 224, 0.03);
+      border: 1px solid rgba(245, 237, 224, 0.08);
+      border-radius: 12px;
+    }
+    .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .legal-hero { padding: 56px 24px 48px; }
+    .legal-layout { padding: 40px 24px 64px; }
+    .toc-list { grid-template-columns: 1fr; }
+    .rights-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-meta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .legal-table { font-size: 13px; }
+    .legal-table th, .legal-table td { padding: 12px; }
+  }
+</style>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/assets/throwha-logo.png" alt="Throwha" /></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#events">Events</a>
+      <a href="/#how">Get Started</a>
+      <a href="/#about">About</a>
+    </div>
+    <div class="nav-cta-group">
+      <a href="/#sponsor" class="nav-sponsor">Sponsor</a>
+      <a href="/#" class="nav-cta">Get free coach</a>
+    </div>
+  </div>
+</nav>
+
+<header class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">LEGAL — PRIVACY</div>
+    <h1 class="legal-title">Privacy Policy</h1>
+    <div class="legal-meta">
+      <span>Last updated: April 2026</span>
+      <span class="sep">/</span>
+      <span>Version 1.1</span>
+      <span class="sep">/</span>
+      <span class="compliance">✓ PRIVACY ACT 1988 (CTH) &amp; APPS</span>
+    </div>
+  </div>
+</header>
+
+<div class="legal-layout">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="num">01</span>Who We Are</a></li>
+      <li><a href="#s2"><span class="num">02</span>What Information We Collect</a></li>
+      <li><a href="#s3"><span class="num">03</span>How We Use Your Information</a></li>
+      <li><a href="#s4"><span class="num">04</span>Data Sharing and Disclosure</a></li>
+      <li><a href="#s5"><span class="num">05</span>Data Sovereignty &amp; Storage</a></li>
+      <li><a href="#s6"><span class="num">06</span>Data Retention</a></li>
+      <li><a href="#s7"><span class="num">07</span>Your Privacy Rights</a></li>
+      <li><a href="#s8"><span class="num">08</span>Cookies and Analytics</a></li>
+      <li><a href="#s9"><span class="num">09</span>Children and Minors</a></li>
+      <li><a href="#s10"><span class="num">10</span>Security Measures</a></li>
+      <li><a href="#s11"><span class="num">11</span>Notifiable Data Breaches</a></li>
+      <li><a href="#s12"><span class="num">12</span>Third-Party Links</a></li>
+      <li><a href="#s13"><span class="num">13</span>Changes to This Policy</a></li>
+      <li><a href="#s14"><span class="num">14</span>Contact Us</a></li>
+    </ul>
+  </aside>
+
+  <article class="legal-article">
+
+    <div class="legal-intro">
+      <p>At Throwha, your privacy matters. This Privacy Policy explains what personal information we collect, how we use it, and your rights under the <em>Australian Privacy Act 1988 (Cth)</em> and the <em>Australian Privacy Principles (APPs)</em>.</p>
+      <p>We are committed to handling your information with care and transparency. For questions or requests, contact us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a>.</p>
+    </div>
+
+    <section class="legal-section" id="s1">
+      <h2><span class="num">SECTION 01</span>Who We Are</h2>
+      <p>Throwha is an AI-assisted digital coaching platform for throws athletes (shot put, discus, javelin, hammer), operated by Lee O'Halloran, based in New South Wales, Australia.</p>
+      <p>We are subject to the <em>Privacy Act 1988 (Cth)</em> and the <em>Australian Privacy Principles (APPs)</em>. This policy explains how we manage personal information in accordance with those obligations.</p>
+      <div class="identity-block">
+        <div><span class="label">ABN</span>48 596 170 512</div>
+        <div><span class="label">Contact</span><a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></div>
+        <div><span class="label">Website</span><a href="https://throwha.com">throwha.com</a></div>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s2">
+      <h2><span class="num">SECTION 02</span>What Information We Collect</h2>
+      <p>We collect personal information that is necessary to provide our services. The types of information we collect include:</p>
+      <table class="legal-table">
+        <thead>
+          <tr><th>Category</th><th>Examples</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Account information</td>
+            <td>Name, email address, password (hashed), account type (athlete/coach), country, timezone</td>
+            <td>You, at registration</td>
+          </tr>
+          <tr>
+            <td>Classification data</td>
+            <td>Para athletic classification (e.g., F46), disability information you choose to share</td>
+            <td>You, optionally</td>
+          </tr>
+          <tr>
+            <td>Training data</td>
+            <td>Session logs, performance metrics, distances, throws recorded, training notes</td>
+            <td>You, during use</td>
+          </tr>
+          <tr>
+            <td>Video and media</td>
+            <td>Video footage of training sessions uploaded for technique analysis</td>
+            <td>You, during use</td>
+          </tr>
+          <tr>
+            <td>Coaching content</td>
+            <td>Technique cues, coach notes, AI-generated feedback, messages between coaches and athletes</td>
+            <td>Platform-generated or user-provided</td>
+          </tr>
+          <tr>
+            <td>Technical data</td>
+            <td>IP address, browser type, device information, usage logs, error reports</td>
+            <td>Automatically collected</td>
+          </tr>
+          <tr>
+            <td>Payment data (coaches)</td>
+            <td>Billing name, payment method details (processed by our payment provider — we do not store full card numbers)</td>
+            <td>You, at checkout</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Sensitive Information</h3>
+      <p>Para athletic classification data (e.g., F46, F40) may constitute sensitive information under the Privacy Act as it may relate to health or disability status. We collect this information only where you provide it voluntarily and only for the purpose of enabling appropriate coaching and performance tracking. We handle this information with additional care and will not use or disclose it for any other purpose without your explicit consent.</p>
+
+      <h3>Information We Do Not Collect</h3>
+      <p>We do not collect: government identifiers (e.g., Medicare numbers, Tax File Numbers), financial account credentials, or biometric data beyond voluntarily uploaded video footage.</p>
+    </section>
+
+    <section class="legal-section" id="s3">
+      <h2><span class="num">SECTION 03</span>How We Use Your Information</h2>
+      <p>We use your personal information only for the purposes for which it was collected, or purposes that are directly related. Specifically:</p>
+      <ul>
+        <li><strong>Providing the Platform:</strong> To create and manage your account, deliver AI coaching feedback, store training logs, and enable coach–athlete collaboration;</li>
+        <li><strong>AI coaching analysis:</strong> Your training data and video footage may be processed by Anthropic's Claude AI to generate technique feedback. This processing is subject to Anthropic's applicable data handling commitments;</li>
+        <li><strong>Communications:</strong> To send service notifications, respond to enquiries, and (with your consent) send product updates or newsletters;</li>
+        <li><strong>Security and fraud prevention:</strong> To protect the Platform and our users from misuse, unauthorised access, or fraudulent activity;</li>
+        <li><strong>Service improvement:</strong> To analyse usage patterns and improve the Platform's features and performance — using aggregated, de-identified data where possible;</li>
+        <li><strong>Legal compliance:</strong> To comply with applicable laws, regulations, court orders, or law enforcement requests;</li>
+        <li><strong>Payment processing:</strong> To process subscription payments from coach accounts.</li>
+      </ul>
+      <p>We will not use your personal information for direct marketing without your consent. You may withdraw consent for marketing at any time by using the unsubscribe link in our emails or contacting us.</p>
+    </section>
+
+    <section class="legal-section" id="s4">
+      <h2><span class="num">SECTION 04</span>Data Sharing and Disclosure</h2>
+
+      <h3>Athlete-Controlled Sharing with Coaches</h3>
+      <p>Your training data is yours. We share your data with a coach only if you explicitly grant them access through the Platform. You can revoke this access at any time. Coaches are bound by obligations under our Terms of Service not to misuse athlete data.</p>
+
+      <h3>Third-Party Service Providers</h3>
+      <p>We engage trusted third-party providers who assist us in operating the Platform. These providers are contractually required to handle your data securely and only for the purposes we specify. They include:</p>
+      <ul>
+        <li><strong>Hosting infrastructure:</strong> Australian VPS provider(s) for data storage (see Section 5 — Data Sovereignty);</li>
+        <li><strong>AI processing:</strong> Anthropic (Claude) for generating coaching feedback;</li>
+        <li><strong>Payment processing:</strong> A PCI-DSS compliant payment gateway (details disclosed at checkout);</li>
+        <li><strong>Email delivery:</strong> A transactional email provider for system notifications.</li>
+      </ul>
+
+      <div class="highlight-box success">
+        <div class="highlight-box-title">✓ We do not sell your data</div>
+        <p>We do not sell, rent, lease, or trade your personal information to any third party for commercial purposes. Ever.</p>
+      </div>
+
+      <h3>Other Disclosures</h3>
+      <p>We may disclose personal information where required by law, court order, or regulatory authority, or where we have a good-faith belief that disclosure is necessary to protect the safety of any person or prevent fraud.</p>
+    </section>
+
+    <section class="legal-section" id="s5">
+      <h2><span class="num">SECTION 05</span>Data Sovereignty and Storage Location</h2>
+      <p>We take data sovereignty seriously. Our primary infrastructure is hosted on Australian servers located within Australia. For users in other countries, we endeavour to store personal data on servers located within the user's country or jurisdiction, subject to the availability of appropriate hosting infrastructure.</p>
+      <p>Where data is transferred internationally (for example, via AI processing services or third-party providers), we take reasonable steps to ensure the receiving party maintains privacy protections consistent with the Australian Privacy Principles. By using the Platform, you consent to such transfers where necessary to provide the service.</p>
+      <p>If you have specific questions about where your data is stored, contact us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a>.</p>
+    </section>
+
+    <section class="legal-section" id="s6">
+      <h2><span class="num">SECTION 06</span>Data Retention</h2>
+      <p>We retain your personal information only for as long as necessary to fulfil the purposes for which it was collected, or as required by law:</p>
+      <ul>
+        <li><strong>Active accounts:</strong> Data is retained for the duration of your account;</li>
+        <li><strong>Account deletion:</strong> Upon account deletion, we will delete your personal data within 30 days, except where we are required to retain it by law (e.g., financial records for tax purposes, retained for 7 years);</li>
+        <li><strong>Backups:</strong> Deleted data may persist in encrypted backups for up to 90 days before being fully purged;</li>
+        <li><strong>Training logs and video:</strong> Deleted immediately upon your request or account deletion, subject to the backup window above;</li>
+        <li><strong>De-identified data:</strong> Aggregated, de-identified analytical data may be retained indefinitely as it cannot be linked to any individual.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s7">
+      <h2><span class="num">SECTION 07</span>Your Privacy Rights</h2>
+      <p>Under the Australian Privacy Act and APPs, you have the following rights regarding your personal information:</p>
+      <div class="rights-grid">
+        <div class="right-card"><h4>Access</h4><p>Request a copy of the personal information we hold about you.</p></div>
+        <div class="right-card"><h4>Correction</h4><p>Request correction of inaccurate or outdated information.</p></div>
+        <div class="right-card"><h4>Deletion</h4><p>Request deletion of your personal data (subject to legal retention obligations).</p></div>
+        <div class="right-card"><h4>Opt-out of marketing</h4><p>Unsubscribe from marketing communications at any time.</p></div>
+        <div class="right-card"><h4>Data portability</h4><p>Request an export of your training data in a machine-readable format.</p></div>
+        <div class="right-card"><h4>Withdraw consent</h4><p>Withdraw consent where processing is based on consent (e.g., coach data sharing).</p></div>
+      </div>
+      <p>To exercise any of these rights, email us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a>. We will respond within 30 days. We may need to verify your identity before processing your request. We will not charge a fee for reasonable access requests.</p>
+      <p>If you are unsatisfied with how we handle your request, you may lodge a complaint with the <strong>Office of the Australian Information Commissioner (OAIC)</strong> at <a href="https://oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a> or by calling 1300 363 992.</p>
+    </section>
+
+    <section class="legal-section" id="s8">
+      <h2><span class="num">SECTION 08</span>Cookies and Analytics</h2>
+      <p>We use a minimal set of cookies and similar technologies:</p>
+      <ul>
+        <li><strong>Essential cookies:</strong> Required for the Platform to function (e.g., session authentication). These cannot be disabled.</li>
+        <li><strong>Analytics:</strong> We may collect anonymised usage data (page views, feature usage) to improve the Platform. We use privacy-preserving analytics that do not build individual user profiles or share data with advertising networks.</li>
+        <li><strong>No advertising cookies:</strong> We do not use third-party advertising cookies or participate in ad tracking networks.</li>
+      </ul>
+      <p>You can control cookie preferences through your browser settings. Disabling essential cookies may affect Platform functionality.</p>
+    </section>
+
+    <section class="legal-section" id="s9">
+      <h2><span class="num">SECTION 09</span>Children and Minors</h2>
+      <p>The Platform is not directed at children under the age of 13. Users between 13 and 17 years of age may only use the Platform with the verified consent of a parent or legal guardian, who accepts these terms and takes responsibility for the minor's use of the Platform.</p>
+      <p>If we become aware that we have collected personal information from a child under 13 without appropriate parental consent, we will delete that information promptly. Please contact us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a> if you believe we have collected information from a child without consent.</p>
+    </section>
+
+    <section class="legal-section" id="s10">
+      <h2><span class="num">SECTION 10</span>Security Measures</h2>
+      <p>We implement reasonable technical and organisational measures to protect your personal information from unauthorised access, loss, misuse, or disclosure. These measures include:</p>
+      <ul>
+        <li>Encryption of data in transit (TLS/HTTPS) and at rest;</li>
+        <li>Hashed password storage (bcrypt or equivalent);</li>
+        <li>Access controls limiting staff access to personal data to those who need it;</li>
+        <li>Regular security reviews of our infrastructure;</li>
+        <li>Secure, encrypted backups stored in geographically separated locations.</li>
+      </ul>
+      <p>No system is completely secure. We cannot guarantee absolute security of information transmitted over the internet. You use the Platform at your own risk and are responsible for maintaining the security of your account credentials.</p>
+    </section>
+
+    <section class="legal-section" id="s11">
+      <h2><span class="num">SECTION 11</span>Notifiable Data Breaches</h2>
+      <p>We are subject to the <em>Notifiable Data Breaches (NDB) scheme</em> under the Privacy Act 1988 (Cth). In the event of an eligible data breach — one that is likely to result in serious harm to any affected individual — we will:</p>
+      <ul>
+        <li>Assess the breach as quickly as possible (within 30 days of becoming aware);</li>
+        <li>Notify affected individuals and the Office of the Australian Information Commissioner (OAIC) as required by law;</li>
+        <li>Take immediate steps to contain the breach and prevent further harm.</li>
+      </ul>
+      <p>If you believe your account has been compromised, contact us immediately at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a>.</p>
+    </section>
+
+    <section class="legal-section" id="s12">
+      <h2><span class="num">SECTION 12</span>Third-Party Links</h2>
+      <p>The Platform may contain links to third-party websites. This Privacy Policy does not apply to those websites. We encourage you to review the privacy policies of any third-party sites you visit. We are not responsible for the privacy practices of third parties.</p>
+    </section>
+
+    <section class="legal-section" id="s13">
+      <h2><span class="num">SECTION 13</span>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of material changes by email and/or by posting a prominent notice on the Platform. The "Last updated" date at the top reflects the most recent revision.</p>
+      <p>Your continued use of the Platform after the effective date of any change constitutes acceptance of the revised policy.</p>
+    </section>
+
+    <section class="legal-section" id="s14">
+      <h2><span class="num">SECTION 14</span>Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our handling of your personal information, please contact us:</p>
+      <div class="contact-block">
+        <div class="contact-block-title">Throwha — Privacy Enquiries</div>
+        <div class="contact-block-grid">
+          <div><span>ABN</span> &nbsp;48 596 170 512</div>
+          <div><span>Email</span> &nbsp;<a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></div>
+          <div><span>Website</span> &nbsp;<a href="https://throwha.com">throwha.com</a></div>
+          <div><span>Location</span> &nbsp;New South Wales, Australia</div>
+        </div>
+      </div>
+      <p>We aim to respond to all privacy enquiries within 30 days.</p>
+    </section>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="/assets/throwha-logo.png" alt="Throwha" /></a>
+        <p>Full-time digital throws coaching for every athlete. Free. Forever.</p>
+      </div>
+      <div class="footer-col">
+        <h5>// CONTACT</h5>
+        <ul>
+          <li><a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></li>
+          <li><a href="https://instagram.com/throwha_" target="_blank" rel="noopener">Instagram @throwha_</a></li>
+          <li><a href="/#sponsor">Become a sponsor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>// ATHLETES</h5>
+        <ul>
+          <li><a href="/#">Get your free coach</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#events">Events covered</a></li>
+          <li><a href="/#how">Getting started</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>// COACHES</h5>
+        <ul>
+          <li><a href="/#">Register as a coach</a></li>
+          <li><a href="/#about">About Project Throwha</a></li>
+          <li><a href="/#sponsor">Become a partner</a></li>
+          <li><a href="https://instagram.com/throwha_" target="_blank" rel="noopener">Follow @throwha_</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-meta-row">
+        <span class="abn">ABN 48 596 170 512</span>
+        <div class="footer-legal">
+          <a href="/privacy-policy" class="current">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+          <a href="/liability-disclaimer">Liability Disclaimer</a>
+        </div>
+        <span>© 2026 PROJECT THROWHA</span>
+      </div>
+      <div class="footer-compliance">Compliant with the Privacy Act 1988 (Cth) &amp; Australian Privacy Principles · Disability Discrimination Act 1992 (Cth)</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

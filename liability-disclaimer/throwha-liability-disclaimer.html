@@ -1,0 +1,662 @@
+<script defer src="https://cloud.umami.is/script.js" data-website-id="2cd85201-9e85-4fbe-ad51-01d0b2cfe7fe"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0E1828; color: #F5EDE0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { text-decoration: none; color: #C97B5A; transition: color 0.2s; }
+  a:hover { color: #D08562; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(14, 24, 40, 0.85);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+  }
+  .nav-inner {
+    max-width: 1320px; margin: 0 auto; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo {
+    font: 800 22px 'Inter'; letter-spacing: -0.04em; color: #F5EDE0;
+    display: inline-flex; align-items: center; line-height: 0;
+  }
+  .logo span { color: #C97B5A; }
+  .logo img {
+    width: auto; display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.92;
+  }
+  .nav .logo img { height: 36px; }
+  .footer-brand .logo img { height: 52px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.55);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .nav-links a:hover { color: #F5EDE0; }
+  .nav-cta-group { display: flex; gap: 10px; align-items: center; }
+  .nav-sponsor {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(201, 123, 90, 0.85);
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border: 1px solid rgba(201, 123, 90, 0.3);
+    padding: 7px 14px; border-radius: 6px;
+  }
+  .nav-sponsor:hover { background: rgba(201, 123, 90, 0.1); color: #C97B5A; }
+  .nav-cta {
+    background: #C97B5A; color: #0E1828;
+    padding: 9px 16px; border-radius: 6px;
+    font: 600 13px 'Inter';
+  }
+  .nav-cta:hover { background: #D08562; color: #0E1828; }
+
+  /* Hero */
+  .legal-hero {
+    padding: 72px 28px 56px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.08);
+    background: radial-gradient(ellipse at top, rgba(208, 133, 98, 0.08), transparent 60%);
+  }
+  .legal-hero-inner { max-width: 1240px; margin: 0 auto; }
+  .legal-eyebrow {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .legal-eyebrow::before { content: ''; width: 28px; height: 1px; background: #C97B5A; }
+  .legal-title {
+    font: 700 clamp(40px, 5.5vw, 64px)/1.05 'Inter';
+    letter-spacing: -0.035em; margin-bottom: 24px;
+  }
+  .legal-meta {
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+    font: 500 12px 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(245, 237, 224, 0.6);
+  }
+  .legal-meta .sep { color: rgba(245, 237, 224, 0.25); }
+  .legal-meta .notice-badge {
+    color: #D08562;
+    border: 1px solid rgba(208, 133, 98, 0.4);
+    padding: 5px 10px; border-radius: 100px;
+    font-size: 10px;
+    background: rgba(208, 133, 98, 0.08);
+  }
+
+  /* Layout */
+  .legal-layout {
+    max-width: 1240px; margin: 0 auto;
+    display: grid; grid-template-columns: 260px 1fr;
+    gap: 64px; padding: 64px 28px 96px;
+  }
+  .toc {
+    position: sticky; top: 88px; align-self: start;
+  }
+  .toc-label {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.08);
+  }
+  .toc-list { list-style: none; }
+  .toc-list a {
+    display: block;
+    padding: 9px 0 9px 14px;
+    font: 500 12.5px 'Inter';
+    color: rgba(245, 237, 224, 0.55);
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .toc-list a:hover {
+    color: #F5EDE0;
+    border-left-color: rgba(201, 123, 90, 0.4);
+  }
+  .toc-list .num {
+    display: inline-block; width: 22px;
+    color: rgba(201, 123, 90, 0.7);
+    font: 600 11px 'JetBrains Mono', monospace;
+  }
+
+  /* Article */
+  .legal-article {
+    max-width: 760px;
+    font-size: 16px; line-height: 1.75;
+  }
+
+  /* Important Notice (top of disclaimer) */
+  .important-notice {
+    background: rgba(208, 133, 98, 0.08);
+    border: 1px solid rgba(208, 133, 98, 0.4);
+    border-left: 4px solid #D08562;
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .important-notice .notice-icon {
+    font-size: 32px;
+    color: #D08562;
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+  .important-notice h2 {
+    font: 700 24px 'Inter';
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: #F5EDE0;
+  }
+  .important-notice p {
+    font-size: 15.5px; line-height: 1.65;
+    color: rgba(245, 237, 224, 0.88);
+    margin: 0;
+  }
+  .important-notice strong { color: #F5EDE0; font-weight: 700; }
+
+  /* Sections */
+  .legal-section {
+    margin-bottom: 56px;
+    scroll-margin-top: 88px;
+  }
+  .legal-section h2 {
+    font: 700 28px 'Inter';
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(245, 237, 224, 0.08);
+  }
+  .legal-section h2 .num {
+    display: block;
+    font: 600 12px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.18em;
+    margin-bottom: 8px;
+  }
+  .legal-section h3 {
+    font: 600 17px 'Inter';
+    margin: 28px 0 12px;
+    color: #C97B5A;
+  }
+  .legal-article p { margin-bottom: 16px; color: rgba(245, 237, 224, 0.8); }
+  .legal-article strong { color: #F5EDE0; font-weight: 600; }
+  .legal-article em { color: rgba(245, 237, 224, 0.95); font-style: italic; }
+
+  /* AI Comparison cards */
+  .ai-comparison {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .ai-card {
+    border-radius: 12px;
+    padding: 28px;
+    border: 1px solid;
+  }
+  .ai-card.ai-is {
+    background: rgba(122, 184, 124, 0.05);
+    border-color: rgba(122, 184, 124, 0.3);
+  }
+  .ai-card.ai-isnot {
+    background: rgba(208, 133, 98, 0.05);
+    border-color: rgba(208, 133, 98, 0.3);
+  }
+  .ai-card-icon {
+    font: 700 22px 'Inter';
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .ai-card.ai-is .ai-card-icon {
+    background: rgba(122, 184, 124, 0.15);
+    color: #7AB87C;
+  }
+  .ai-card.ai-isnot .ai-card-icon {
+    background: rgba(208, 133, 98, 0.15);
+    color: #D08562;
+  }
+  .ai-card h4 {
+    font: 600 16px 'Inter';
+    margin-bottom: 10px;
+    color: #F5EDE0;
+    letter-spacing: -0.005em;
+  }
+  .ai-card p {
+    font-size: 14.5px; line-height: 1.6;
+    color: rgba(245, 237, 224, 0.78);
+    margin: 0;
+  }
+
+  /* Marker lists (✗ and ✓) */
+  .marker-list {
+    margin: 16px 0 24px;
+    padding: 0;
+    list-style: none;
+  }
+  .marker-list li {
+    margin-bottom: 12px;
+    padding-left: 32px;
+    position: relative;
+    color: rgba(245, 237, 224, 0.85);
+    line-height: 1.55;
+  }
+  .marker-list li::before {
+    position: absolute; left: 0; top: 1px;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font: 700 12px 'Inter';
+    line-height: 1;
+  }
+  .marker-list.no li::before {
+    content: '✗';
+    background: rgba(208, 133, 98, 0.15);
+    color: #D08562;
+  }
+  .marker-list.yes li::before {
+    content: '✓';
+    background: rgba(122, 184, 124, 0.15);
+    color: #7AB87C;
+  }
+
+  /* Standard arrow list */
+  .legal-article ul:not(.marker-list) {
+    margin: 0 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .legal-article ul:not(.marker-list) li {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .legal-article ul:not(.marker-list) li::before {
+    content: '→'; position: absolute; left: 0;
+    color: #C97B5A; font-weight: 600;
+  }
+
+  /* Liability box (the big one in §4) */
+  .liability-box {
+    background: rgba(208, 133, 98, 0.08);
+    border: 1px solid rgba(208, 133, 98, 0.4);
+    border-left: 4px solid #D08562;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: 24px 0;
+  }
+  .liability-box-title {
+    font: 700 18px 'Inter';
+    color: #F5EDE0;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .liability-box p {
+    color: rgba(245, 237, 224, 0.92);
+    font-size: 15.5px;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .liability-box strong {
+    color: #D08562;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* ACL preserved box */
+  .highlight-box {
+    background: rgba(122, 184, 124, 0.05);
+    border: 1px solid rgba(122, 184, 124, 0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .highlight-box-title {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #7AB87C;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+  .highlight-box p { color: rgba(245, 237, 224, 0.88); margin: 0; }
+
+  /* Para athletes callout */
+  .para-callout {
+    background: rgba(201, 123, 90, 0.06);
+    border: 1px solid rgba(201, 123, 90, 0.25);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(245, 237, 224, 0.88);
+  }
+  .para-callout-label {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #C97B5A;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+
+  /* Contact block */
+  .contact-block {
+    background: rgba(245, 237, 224, 0.03);
+    border: 1px solid rgba(245, 237, 224, 0.08);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 20px 0;
+  }
+  .contact-block-title {
+    font: 600 14px 'Inter';
+    color: #F5EDE0;
+    margin-bottom: 14px;
+  }
+  .contact-block-grid {
+    display: grid; gap: 8px;
+    font: 500 14px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.8);
+  }
+  .contact-block-grid span:first-child { color: #C97B5A; }
+
+  /* Footer */
+  .footer {
+    padding: 56px 28px 40px;
+    border-top: 1px solid rgba(245, 237, 224, 0.08);
+    background: #0A1422;
+  }
+  .footer-inner { max-width: 1320px; margin: 0 auto; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(245, 237, 224, 0.06);
+  }
+  .footer-brand .logo {
+    font: 800 26px 'Inter'; letter-spacing: -0.04em;
+    margin-bottom: 12px; display: block;
+  }
+  .footer-brand p {
+    font-size: 13.5px; line-height: 1.6;
+    color: rgba(245, 237, 224, 0.6); max-width: 320px;
+  }
+  .footer-col h5 {
+    font: 600 11px 'JetBrains Mono', monospace;
+    color: #C97B5A; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; display: grid; gap: 10px; }
+  .footer-col a, .footer-col li {
+    font-size: 13.5px; line-height: 1.5;
+    color: rgba(245, 237, 224, 0.7);
+  }
+  .footer-col a:hover { color: #C97B5A; }
+  .footer-meta {
+    padding-top: 24px;
+    display: grid; gap: 14px;
+  }
+  .footer-meta-row {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px; flex-wrap: wrap;
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.45); letter-spacing: 0.05em;
+  }
+  .footer-meta .abn {
+    color: rgba(245, 237, 224, 0.7); font-weight: 600;
+  }
+  .footer-legal { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-legal a {
+    font: 500 12px 'JetBrains Mono', monospace;
+    color: rgba(245, 237, 224, 0.6);
+    letter-spacing: 0.05em;
+  }
+  .footer-legal a.current { color: #C97B5A; }
+  .footer-compliance {
+    font: 500 11px 'JetBrains Mono', monospace;
+    color: rgba(201, 123, 90, 0.75);
+    letter-spacing: 0.06em; line-height: 1.6;
+    padding-top: 4px;
+    border-top: 1px solid rgba(245, 237, 224, 0.05);
+  }
+  .footer-compliance::before {
+    content: '✓ '; color: #7AB87C; font-weight: 700; margin-right: 4px;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .legal-layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc {
+      position: static;
+      padding: 20px 24px;
+      background: rgba(245, 237, 224, 0.03);
+      border: 1px solid rgba(245, 237, 224, 0.08);
+      border-radius: 12px;
+    }
+    .toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+    .ai-comparison { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .legal-hero { padding: 56px 24px 48px; }
+    .legal-layout { padding: 40px 24px 64px; }
+    .toc-list { grid-template-columns: 1fr; }
+    .important-notice { padding: 24px 26px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-meta-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+</style>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="/assets/throwha-logo.png" alt="Throwha" /></a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#events">Events</a>
+      <a href="/#how">Get Started</a>
+      <a href="/#about">About</a>
+    </div>
+    <div class="nav-cta-group">
+      <a href="/#sponsor" class="nav-sponsor">Sponsor</a>
+      <a href="/#" class="nav-cta">Get free coach</a>
+    </div>
+  </div>
+</nav>
+
+<header class="legal-hero">
+  <div class="legal-hero-inner">
+    <div class="legal-eyebrow">LEGAL — DISCLAIMER</div>
+    <h1 class="legal-title">Liability Disclaimer</h1>
+    <div class="legal-meta">
+      <span>Last updated: April 2026</span>
+      <span class="sep">/</span>
+      <span>Version 1.1</span>
+      <span class="sep">/</span>
+      <span class="notice-badge">⚠ READ BEFORE USING</span>
+    </div>
+  </div>
+</header>
+
+<div class="legal-layout">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="num">01</span>AI Coaching is a Tool</a></li>
+      <li><a href="#s2"><span class="num">02</span>Not Medical Advice</a></li>
+      <li><a href="#s3"><span class="num">03</span>Consult a Professional</a></li>
+      <li><a href="#s4"><span class="num">04</span>No Liability for Injuries</a></li>
+      <li><a href="#s5"><span class="num">05</span>Use at Your Own Risk</a></li>
+      <li><a href="#s6"><span class="num">06</span>Australian Consumer Law</a></li>
+      <li><a href="#s7"><span class="num">07</span>Questions</a></li>
+    </ul>
+  </aside>
+
+  <article class="legal-article">
+
+    <div class="important-notice">
+      <div class="notice-icon">⚠</div>
+      <h2>Important — Please read before using Throwha</h2>
+      <p>Throwha provides AI-powered coaching tools to help athletes improve. It is a <strong>supplement to — not a replacement for</strong> qualified human coaching, medical care, and professional sports science advice.</p>
+    </div>
+
+    <section class="legal-section" id="s1">
+      <h2><span class="num">SECTION 01</span>AI Coaching is a Tool, Not a Coach</h2>
+      <p>The coaching feedback, technique analysis, training suggestions, and cues generated by the Throwha Platform are produced by artificial intelligence (powered by <strong>Anthropic's Claude</strong>). These outputs are designed to support your training — they are not a substitute for working with a qualified throws coach.</p>
+
+      <div class="ai-comparison">
+        <div class="ai-card ai-is">
+          <div class="ai-card-icon">✓</div>
+          <h4>What AI Coaching Is</h4>
+          <p>A supportive tool for pattern recognition, technique feedback, and training log analysis. Useful for supplementing professional guidance.</p>
+        </div>
+        <div class="ai-card ai-isnot">
+          <div class="ai-card-icon">✗</div>
+          <h4>What AI Coaching Is Not</h4>
+          <p>A replacement for a qualified athletics coach, physiotherapist, sports doctor, or any credentialled professional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s2">
+      <h2><span class="num">SECTION 02</span>Not Medical, Physiotherapy, or Health Advice</h2>
+      <p>Nothing on the Throwha Platform constitutes medical advice, physiotherapy advice, sports medicine advice, or any form of health or clinical advice. Specifically, the Platform <strong>does not</strong>:</p>
+      <ul class="marker-list no">
+        <li>Diagnose or treat any injury, illness, condition, or disability;</li>
+        <li>Provide physiotherapy, rehabilitation, or recovery protocols;</li>
+        <li>Assess whether a training load or technique is safe for your individual body;</li>
+        <li>Advise on medications, supplements, or clinical interventions;</li>
+        <li>Replace a sports science, medical, or physio assessment.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s3">
+      <h2><span class="num">SECTION 03</span>Consult a Professional Before Changing Your Training</h2>
+      <p>Before making any significant change to your training program, technique, load, or recovery based on AI-generated feedback from the Platform, you should consult:</p>
+      <ul class="marker-list yes">
+        <li>A qualified throws coach or athletics coach accredited by your national federation;</li>
+        <li>A physiotherapist or sports medicine practitioner, if the change involves physical movement patterns or load;</li>
+        <li>A medical doctor, if you have any existing injury, health condition, or medical concern;</li>
+        <li>A sports scientist or strength and conditioning specialist where appropriate.</li>
+      </ul>
+      <div class="para-callout">
+        <div class="para-callout-label">// PARA ATHLETES — IMPORTANT</div>
+        This is especially important for para athletes or athletes with disability-related classifications, where individual biomechanical and health considerations may differ significantly from general advice.
+      </div>
+    </section>
+
+    <section class="legal-section" id="s4">
+      <h2><span class="num">SECTION 04</span>No Liability for Injuries</h2>
+
+      <div class="liability-box">
+        <div class="liability-box-title">⚠ Throwha accepts no liability for injury</div>
+        <p>To the maximum extent permitted by applicable law, Throwha and its operators, employees, contractors, and affiliates accept <strong>no liability whatsoever</strong> for any injury, harm, loss, damage, or adverse outcome — whether physical, financial, or otherwise — arising from your use of or reliance on the Throwha Platform, including any AI-generated coaching output, training suggestion, or technique cue.</p>
+      </div>
+
+      <p>This includes but is not limited to:</p>
+      <ul>
+        <li>Acute or chronic injuries sustained during training or competition;</li>
+        <li>Aggravation of pre-existing injuries or conditions;</li>
+        <li>Overuse injuries or overtraining syndromes;</li>
+        <li>Any harm arising from following technique suggestions without professional supervision;</li>
+        <li>Any loss, damage, or adverse outcome flowing from AI outputs that are inaccurate, incomplete, or unsuitable for your individual circumstances.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s5">
+      <h2><span class="num">SECTION 05</span>Use at Your Own Risk</h2>
+      <p>You use the Throwha Platform entirely at your own risk. By using the Platform, you acknowledge and accept that:</p>
+      <ul>
+        <li>AI systems can produce errors, and outputs may not be appropriate for every individual;</li>
+        <li>You are solely responsible for your training decisions and their consequences;</li>
+        <li>Throwha does not supervise, verify, or guarantee the qualifications of any coach who uses the Platform;</li>
+        <li>You have read and understood this disclaimer before relying on any content from the Platform.</li>
+      </ul>
+    </section>
+
+    <section class="legal-section" id="s6">
+      <h2><span class="num">SECTION 06</span>Australian Consumer Law</h2>
+      <div class="highlight-box">
+        <div class="highlight-box-title">✓ Your statutory rights are preserved</div>
+        <p>Nothing in this disclaimer excludes, restricts, or modifies any right or remedy, or any guarantee, warranty, or other term or condition, implied or imposed by law (including the <em>Australian Consumer Law</em>) which cannot lawfully be excluded or limited. Where consumer guarantees apply that cannot be excluded, Throwha's liability is limited to the extent permitted by law, including by re-supplying the relevant service.</p>
+      </div>
+    </section>
+
+    <section class="legal-section" id="s7">
+      <h2><span class="num">SECTION 07</span>Questions?</h2>
+      <p>If you have questions about this disclaimer, contact us at <a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a>.</p>
+      <div class="contact-block">
+        <div class="contact-block-title">Throwha — Disclaimer Enquiries</div>
+        <div class="contact-block-grid">
+          <div><span>ABN</span> &nbsp;48 596 170 512</div>
+          <div><span>Email</span> &nbsp;<a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></div>
+          <div><span>Website</span> &nbsp;<a href="https://throwha.com">throwha.com</a></div>
+          <div><span>Location</span> &nbsp;New South Wales, Australia</div>
+        </div>
+      </div>
+      <p>You may also wish to review our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-of-service">Terms of Service</a> for the full picture of how the Platform operates.</p>
+    </section>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="/assets/throwha-logo.png" alt="Throwha" /></a>
+        <p>Full-time digital throws coaching for every athlete. Free. Forever.</p>
+      </div>
+      <div class="footer-col">
+        <h5>// CONTACT</h5>
+        <ul>
+          <li><a href="mailto:enquiries@throwha.com">enquiries@throwha.com</a></li>
+          <li><a href="https://instagram.com/throwha_" target="_blank" rel="noopener">Instagram @throwha_</a></li>
+          <li><a href="/#sponsor">Become a sponsor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>// ATHLETES</h5>
+        <ul>
+          <li><a href="/#">Get your free coach</a></li>
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#events">Events covered</a></li>
+          <li><a href="/#how">Getting started</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>// COACHES</h5>
+        <ul>
+          <li><a href="/#">Register as a coach</a></li>
+          <li><a href="/#about">About Throwha</a></li>
+          <li><a href="/#sponsor">Become a partner</a></li>
+          <li><a href="https://instagram.com/throwha_" target="_blank" rel="noopener">Follow @throwha_</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div class="footer-meta-row">
+        <span class="abn">ABN 48 596 170 512</span>
+        <div class="footer-legal">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+          <a href="/liability-disclaimer" class="current">Liability Disclaimer</a>
+        </div>
+        <span>© 2026 THROWHA</span>
+      </div>
+      <div class="footer-compliance">Compliant with the Privacy Act 1988 (Cth) &amp; Australian Privacy Principles · Disability Discrimination Act 1992 (Cth)</div>
+    </div>
+  </div>
+</footer>
